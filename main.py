@@ -13,14 +13,14 @@ app = FastAPI()
 
 @app.get("/")
 async def root():
-    frontend_url = "https://assistance-grc2qmoq6-pragnias-projects.vercel.app"  # Replace with your actual frontend URL
+    frontend_url = "https://frontend-1ng3tufbp-pragnias-projects.vercel.app"  # Replace with your actual frontend URL
     return RedirectResponse(url=frontend_url)
 
 security = HTTPBasic()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://assistance-i9tkzqycp-pragnias-projects.vercel.app"],  # Update this with your frontend URL
+    allow_origins=["https://frontend-1ng3tufbp-pragnias-projects.vercel.app"],  # Update this with your frontend URL
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
