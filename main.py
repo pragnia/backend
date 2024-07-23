@@ -10,11 +10,15 @@ from src.utils.preprocessing import preprocess_query
 
 app = FastAPI()
 
+@app.get("/")
+async def root():
+    return {"message": "Welcome to the API"}
+
 security = HTTPBasic()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://your-frontend-domain.vercel.app"],  # Update this with your frontend URL
+    allow_origins=["https://assistance-i9tkzqycp-pragnias-projects.vercel.app"],  # Update this with your frontend URL
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
