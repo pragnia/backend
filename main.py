@@ -7,12 +7,14 @@ from src.schemas import QueryRequest, QueryResponse, LoginRequest, DatabaseConne
 from src.services.query_service import QueryService
 from src.services.llm_service import generate_sql_query
 from src.utils.preprocessing import preprocess_query
+from fastapi.responses import RedirectResponse
 
 app = FastAPI()
 
 @app.get("/")
 async def root():
-    return {"message": "Welcome to the API"}
+    frontend_url = "https://assistance-grc2qmoq6-pragnias-projects.vercel.app"  # Replace with your actual frontend URL
+    return RedirectResponse(url=frontend_url)
 
 security = HTTPBasic()
 
